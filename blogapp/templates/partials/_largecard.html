@@ -1,0 +1,21 @@
+{% load static %}
+
+<div class="card mb-3">
+    <img class="card-img-top" src="{{ blog.image.url }}" alt="">
+    <div class="card-body">
+        <h2>
+            <a class="text-decoration-none" href="{% url 'blog_details' blog.slug %}"> 
+                {{blog.title}}
+            </a>
+        </h2>
+        <p class="card-text">
+            {{blog.description|striptags|slice:"0:50"}}
+            <a class="text-decoration-none" href="{% url 'blog_details' blog.slug %}">devamını oku..</a>
+        </p>
+        
+        
+        </div>
+    <div class="card-footer text-muted">
+        Yazan: Faruk Derdiyok 
+    </div>
+</div>

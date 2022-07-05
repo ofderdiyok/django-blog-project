@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock title %} | Faruk Derdiyok</title>
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+
+    {% block css_files %} 
+    {% endblock css_files %}
+
+</head>
+<body>
+    {% include 'partials/_navbar.html' %}
+    <div class="container mt-3">
+        <div class="row mt-3">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-7">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="col-md-4">
+                {% include 'partials/_categories.html' %}
+                {% include 'partials/_personalinfo.html' %}
+            </div>
+
+        </div>
+    </div>
+
+    {% include 'partials/_footer.html' %}
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+    {% block js_files %}
+    {% endblock js_files %}
+
+</body>
+</html>

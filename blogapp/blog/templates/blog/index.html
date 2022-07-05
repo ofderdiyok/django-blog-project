@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block title %}Ana Sayfa{% endblock title %}
+
+
+{% block content %}
+    <h1 class="text-primary">selam, hoşgeldin!</h1>
+    <hr class="bg-dark">
+    
+    {% for blog in blogs %}
+        {% if blog.in_home and blog.is_active %} 
+            {% include 'partials/_largecard.html' %}
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
+

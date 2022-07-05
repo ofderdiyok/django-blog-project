@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+
+{% block title %}Blog Yazıları{% endblock title %}
+
+{% block content %}
+    {% if blogs|length > 0 %}
+        {% for blog in blogs %}
+            {% include 'partials/_largecard.html' %}
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-warning">
+            Ups! Herhangi bir blog bulunamadı!
+        </div>
+    {% endif %}
+{% endblock %}

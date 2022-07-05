@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block title %}{{blog.title}}{% endblock title %}
+
+{% block content %}
+    <img class="card-img-top" src="{{ blog.image.url }}" alt="">
+
+    <h1 class="card-title">
+        <a class="text-decoration-none" href="{% url 'blog_details' blog.slug %}"> 
+            {{blog.title}}
+        </a>
+    </h1>
+
+    <p class="">
+        {{blog.description|safe}}
+    </p>
+{% endblock %}
